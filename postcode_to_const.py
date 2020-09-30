@@ -56,7 +56,8 @@ def write_lookup(postcode_to_constituencyCode, constituencyCode_to_constituencyN
             lineToWrite = postcode + '\t' +constituencyName
             outputFile.write(lineToWrite + "\n")
         except KeyError:
-            pass
+            print "No constituency code for %s" % (postcode)
+            continue
 
 def build(outputFilename = "lookup.tsv"):
     global constituencyCode_to_constituency 
